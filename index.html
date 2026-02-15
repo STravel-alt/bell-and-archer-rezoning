@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montefiori Estates Rezoning Meeting | Village of Lemont</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a4d2e;
+            --primary-light: #2d6a4f;
+            --accent: #c17817;
+            --accent-light: #d4a574;
+            --cream: #f8f6f1;
+            --warm-white: #fdfcf9;
+            --text-dark: #2c2c2c;
+            --text-medium: #5a5a5a;
+            --border: #e5dfd5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text-dark);
+            background: var(--warm-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 80px 20px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-30px, -30px) scale(1.1); }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            opacity: 0.95;
+            margin-bottom: 40px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .meeting-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            margin-top: 40px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .meeting-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .detail-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-medium);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .detail-value {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .main-content {
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+            animation: fadeIn 1s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 26px;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            color: var(--primary);
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .impact-card {
+            background: var(--cream);
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .impact-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .impact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .cta-section {
+            background: var(--cream);
+            padding: 60px 20px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cta-box {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 2px solid var(--border);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 77, 46, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .info-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .info-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff9ed 0%, #fff5e0 100%);
+            border-left: 4px solid var(--accent);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 35px 0;
+        }
+
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .hero {
+                padding: 60px 20px 80px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .meeting-details {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                padding: 35px 25px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">🏘️ Community Notice</div>
+                <h1>Community Rezoning Meeting</h1>
+                <p class="hero-subtitle">The Village of Lemont Planning & Zoning Commission will review a rezoning proposal that could directly impact surrounding residential neighborhoods, including the Estates of Montefiori and nearby communities.</p>
+                
+                <div class="meeting-box">
+                    <div class="detail-label" style="margin-bottom: 10px; font-size: 14px;">Next Planning & Zoning Commission Meeting</div>
+                    <div class="meeting-details">
+                        <div class="detail-item">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <div>
+                                <div class="detail-label">Date</div>
+                                <div class="detail-value">Tuesday, March 4th, 2025</div>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <div>
+                                <div class="detail-label">Time</div>
+                                <div class="detail-value">6:00 PM</div>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <div>
+                                <div class="detail-label">Location</div>
+                                <div class="detail-value">Village Hall<br>418 Main Street</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <section class="section">
+                <h2>What's Happening?</h2>
+                <p>The Village of Lemont Planning & Zoning Commission reviews proposed changes to how land can be used in our community. A rezoning proposal has been submitted that affects properties near residential neighborhoods in our area, including the Estates of Montefiori and surrounding single-family home communities.</p>
+                
+                <p>Rezoning changes what types of buildings and activities are allowed on specific parcels of land. These decisions can have lasting impacts on neighboring areas, affecting traffic patterns, property values, and the character of our established residential communities.</p>
+
+                <div class="highlight-box">
+                    <h3 style="margin-top: 0;">What is Rezoning?</h3>
+                    <p style="margin-bottom: 0;">Rezoning is the process of changing the designated use of a property from one zoning classification to another. For example, land currently zoned for single-family homes might be rezoned for multi-family housing, commercial use, or other purposes. This change affects what can be built, how tall buildings can be, parking requirements, and more.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>The Proposed Development</h2>
+                <p>Below is the site plan showing the proposed development along Archer Avenue, adjacent to established residential neighborhoods. This plan includes multiple buildings with parking spaces that border existing single-family homes in the area.</p>
+                
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 2px solid var(--border); margin-top: 30px;">
+                    <img src="site-plan.png" alt="Proposed Development Site Plan showing buildings adjacent to Estates of Montefiori Homes" style="width: 100%; height: auto; border-radius: 8px; display: block;">
+                    <p style="margin-top: 20px; font-size: 14px; color: var(--text-medium); text-align: center; margin-bottom: 0;">
+                        <strong>Site Plan:</strong> Proposed development showing property line, building locations, and parking areas adjacent to surrounding residential neighborhoods.
+                    </p>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 35px;">
+                    <h3 style="margin-top: 0;">Key Details from the Site Plan</h3>
+                    <ul style="margin: 15px 0 0 20px; line-height: 1.8;">
+                        <li>Multiple buildings proposed (Buildings #4-#10) directly adjacent to residential neighborhoods</li>
+                        <li>90 total parking spaces required for the development</li>
+                        <li>Development sits along Archer Avenue with proposed parking areas bordering the property line</li>
+                        <li>Close proximity to existing single-family homes, including Estates of Montefiori and surrounding areas</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Why Should You Care?</h2>
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <div class="impact-icon">🏡</div>
+                        <h3>Property Values</h3>
+                        <p>Rezoning decisions can significantly affect your home's value. Changes in neighborhood character, increased density, or altered traffic patterns often influence property values in surrounding areas.</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <div class="impact-icon">🚗</div>
+                        <h3>Traffic & Infrastructure</h3>
+                        <p>Different zoning classifications bring different levels of traffic and infrastructure demands. Commercial or multi-family developments typically generate more vehicles, affecting congestion, street parking, and wear on local roads.</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <div class="impact-icon">🌳</div>
+                        <h3>Neighborhood Character</h3>
+                        <p>Our surrounding neighborhoods were designed as single-family residential communities with specific aesthetic and lifestyle qualities. Rezoning can alter the visual landscape, green space, and the overall character that makes our area unique.</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <div class="impact-icon">📊</div>
+                        <h3>Density & Privacy</h3>
+                        <p>Increased density from multi-family or commercial development can impact privacy, noise levels, and the peaceful residential atmosphere that residents chose when purchasing their homes in this area.</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <div class="impact-icon">🏫</div>
+                        <h3>Local Services</h3>
+                        <p>Changes in zoning can affect demand on local schools, parks, utilities, and emergency services. Higher density developments may strain existing infrastructure and services.</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <div class="impact-icon">⚖️</div>
+                        <h3>Your Voice Matters</h3>
+                        <p>Public input during Planning & Zoning Commission meetings is a critical part of the decision-making process. Commissioners consider resident concerns when making recommendations to the Village Board.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>How the Process Works</h2>
+                <ul class="info-list">
+                    <li>
+                        <span class="check-icon">1</span>
+                        <div>
+                            <strong>Application Submitted:</strong> A property owner or developer submits a rezoning request to the Village's Community Development Department.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="check-icon">2</span>
+                        <div>
+                            <strong>Staff Review:</strong> Village staff analyzes the proposal, checking compliance with the Comprehensive Plan and evaluating potential impacts.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="check-icon">3</span>
+                        <div>
+                            <strong>Public Hearing:</strong> The Planning & Zoning Commission holds a public hearing where residents can voice concerns, ask questions, and provide input.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="check-icon">4</span>
+                        <div>
+                            <strong>Commission Recommendation:</strong> After considering public input and staff analysis, the Commission makes a recommendation to approve, deny, or modify the rezoning request.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="check-icon">5</span>
+                        <div>
+                            <strong>Village Board Decision:</strong> The Village Board of Trustees makes the final decision on the rezoning proposal.
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>What You Can Do</h2>
+                <p>Community participation in local government is one of the most powerful tools residents have to protect their investments and maintain quality of life in our neighborhoods. Your voice matters in shaping the future of our community.</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <h3>Attend the Meeting</h3>
+                        <p>Show up to the Planning & Zoning Commission meeting. Your physical presence demonstrates community concern and engagement. Meetings are held at Village Hall, 418 Main Street, Lemont.</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <h3>Speak During Public Comment</h3>
+                        <p>Public hearings include time for resident comments. Prepare a brief statement about your concerns. Be specific about how the rezoning might affect you, your neighbors, and the community.</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <h3>Review Meeting Materials</h3>
+                        <p>Agendas and supporting documents are posted at least 48 hours before meetings on the Village website. Review the rezoning application details before attending.</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <h3>Contact the Village</h3>
+                        <p>Reach out to the Community Development Department at (630) 257-1595 with questions. You can also contact Village Trustees to express your views.</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <h3>Organize with Neighbors</h3>
+                        <p>Connect with fellow residents from surrounding neighborhoods. A unified voice from the community carries more weight than individual comments. Consider forming a coalition of concerned neighbors.</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <h3>Submit Written Comments</h3>
+                        <p>If you cannot attend in person, submit written comments to the Community Development Department. Written testimony becomes part of the official record.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2 style="color: var(--primary); margin-bottom: 20px;">Stay Informed & Make Your Voice Heard</h2>
+                <p style="max-width: 700px; margin: 0 auto 30px; font-size: 18px;">Access official meeting information, agendas, and contact the Village to learn more about how this rezoning proposal could affect our community and surrounding residential neighborhoods.</p>
+                
+                <div class="button-group">
+                    <a href="https://www.lemont.il.us/government/village-clerk/agendas-and-minutes-center" class="btn btn-primary" target="_blank">View Meeting Agendas</a>
+                    <a href="https://www.lemont.il.us/government/appointed-boards-commissions/planning-zoning-commission/development-projects" class="btn btn-secondary" target="_blank">See Development Projects</a>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border);">
+                    <h3 style="margin-top: 0; font-size: 20px;">Important Contacts</h3>
+                    <p style="margin-bottom: 15px;"><strong>Community Development Department:</strong> (630) 257-1595</p>
+                    <p style="margin-bottom: 15px;"><strong>Village Hall Address:</strong> 418 Main Street, Lemont, IL 60439</p>
+                    <p style="margin-bottom: 0;"><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#23554f464e4c4d57634f464e4c4d570d4a4f0d5650"><span class="__cf_email__" data-cfemail="2f59434a4240415b6f434a4240415b014643015a5c">[email&#160;protected]</span></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p style="color: white; margin-bottom: 15px;">This community awareness page was created to help residents understand the rezoning process and encourage civic participation.</p>
+            <p style="color: rgba(255,255,255,0.8); font-size: 15px; margin: 0;">For official information, visit <a hr
